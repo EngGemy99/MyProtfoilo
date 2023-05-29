@@ -1,0 +1,197 @@
+#Home {
+    position: relative;
+    background: url("../../assets/bgIMG.png");
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    .app__wrapper {
+        padding: 0;
+        .copyright {
+            display: none;
+        }
+    }
+}
+.app__header {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    padding: 6rem 2rem 0;
+    @media screen and(min-width:2000px) {
+        padding-top: 8rem;
+    }
+    @media screen and(max-width:1200px) {
+        flex-direction: column;
+    }
+    @media screen and(max-width:450px) {
+        padding: 6rem 1rem 2rem;
+    }
+}
+
+.app__header-info {
+    flex: 0.65;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    @media screen and (max-width: 2000px) {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+.app__header-badge {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    .badge-cmp,
+    .tag-cmp {
+        padding: 1rem 2rem;
+        border: var(--white-color);
+        border-radius: 15px;
+        flex-direction: row;
+        width: auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.5s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    .tag-cmp {
+        flex-direction: column;
+        margin-top: 3rem;
+        p {
+            width: 100%;
+            text-transform: uppercase;
+            text-align: right;
+        }
+    }
+    span {
+        font-size: 2.5rem;
+        @media screen and (min-width: 2000px) {
+            font-size: 5rem;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+.app__header-circles {
+    flex: 0.75;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 100%;
+    margin-left: 1rem;
+    flex-direction: column;
+
+    div {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: var(--white-color);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.5s ease-in-out;
+        cursor: pointer;
+        img {
+            width: 60%;
+            height: 60%;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    div:nth-child(1) {
+        width: 100px;
+        height: 100px;
+    }
+    div:nth-child(2) {
+        margin: 1.75rem;
+        width: 150px;
+        height: 150px;
+    }
+    div:nth-child(3) {
+        width: 70px;
+        height: 70px;
+    }
+    @media screen and(min-width:2000px) {
+        div:nth-child(1) {
+            width: 400px;
+            height: 400px;
+        }
+        div:nth-child(2) {
+            margin: 1.75rem;
+            width: 170px;
+            height: 170px;
+        }
+        div:nth-child(3) {
+            width: 200px;
+            height: 200px;
+        }
+    }
+    @media screen and(max-width:1200px) {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 0;
+        div {
+            margin: 1rem;
+        }
+    }
+    @media (max-width: 600px) {
+        div:nth-child(2) {
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
+
+.app__header-img {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: relative;
+    img {
+        width: 100%;
+        object-fit: contain;
+        z-index: 1;
+    }
+    .shape {
+        background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+        animation: morph 8s ease-in-out infinite;
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        transition: all 1s ease-in-out;
+        width: 100%;
+        height: 90%;
+        z-index: 0;
+        position: absolute;
+    }
+    @media screen and (max-width: 1200px) {
+        margin: 2rem 0;
+    }
+}
+
+@keyframes morph {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        background: linear-gradient(45deg, var(--third) 0%, var(--secondary) 100%);
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        background: linear-gradient(45deg, var(--primary) 0%, var(--secondary) 100%);
+    }
+}
